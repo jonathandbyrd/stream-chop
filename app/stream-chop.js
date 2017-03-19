@@ -42,7 +42,8 @@ streamChop._transform = function (chunk, encoding, done) {
 }
 
 streamChop._flush = function (done) {
-        if (this._lastChunk) {
+        this._lastChunk + "";
+        if (this._lastChunk.length > 0) {
                 this.push(this._lastChunk.toString() + eol);
         }
         this._lastChunk = null
